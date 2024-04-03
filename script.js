@@ -13,5 +13,22 @@ function cekBuku() {
         return;
     }
     
+    let bukuDitemukan = false;
+    for (let i = 0; i < buku.length; i++) {
+        if (buku[i].nama === pilihanBuku) {
+            bukuDitemukan = true;
+            if (jumlah > buku[i].jumlah) {
+                alert("Jumlah buku yang dipilih tidak tersedia!");
+                return;
+            } else {
+                alert("Silahkan ambil buku Anda!");
+                return;
+            }
+        }
+    }
+
+    if (!bukuDitemukan) {
+        alert("Buku yang dipilih tidak ditemukan!");
+    }
 
 }
